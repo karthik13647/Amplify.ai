@@ -1,4 +1,4 @@
----
+
 # **Amplify.ai**
 
 **Amplify.ai** is a powerful platform designed to help job seekers, especially freshers, craft personalized professional documents that stand out in the job market. With features like **cold emails**, **referral messages**, **professional summaries**, **cover letters**, and a **job description keyword generator**, Amplify.ai streamlines the job application process by ensuring that your application materials are tailored, relevant, and ATS-friendly.
