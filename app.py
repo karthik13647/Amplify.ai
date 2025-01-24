@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, session,redirect,flash,url_for
-import requests
 import google.generativeai as genai
 import os
 from flask_sqlalchemy import SQLAlchemy
