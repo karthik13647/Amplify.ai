@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, session,redirect,flash,url_for
-import requests
 import google.generativeai as genai
 import os
 from flask_sqlalchemy import SQLAlchemy
@@ -13,7 +12,7 @@ app = Flask(__name__)
 
 #Configure Gemini API
 api_key = os.getenv('gemini_api_abhi')
-if api_key:
+if api_key: 
     genai.configure(api_key=api_key)
 # print(my_api_key_gemini)
  # Ensure this is set in your environment
