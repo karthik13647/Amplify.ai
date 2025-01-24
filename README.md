@@ -1,7 +1,4 @@
-Here’s an effective and detailed README file for your project on GitHub:
-
 ---
-
 # **Amplify.ai**
 
 **Amplify.ai** is a powerful platform designed to help job seekers, especially freshers, craft personalized professional documents that stand out in the job market. With features like **cold emails**, **referral messages**, **professional summaries**, **cover letters**, and a **job description keyword generator**, Amplify.ai streamlines the job application process by ensuring that your application materials are tailored, relevant, and ATS-friendly.
@@ -83,9 +80,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need further assistance, feel free to contact me:
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- LinkedIn: [your-linkedin-profile](https://www.linkedin.com/in/your-profile)
+- Email: [Mail me](mailto:iamnoboby40x@gmail.com)
+- LinkedIn: [linkedin-profile]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/karthik-b-475484259/))
 
 ---
-
-This README file provides all necessary details to get started, explains the project’s functionality, and encourages contributions. You can replace placeholders with your actual GitHub link, email, and LinkedIn profile. Let me know if you'd like any other changes!
