@@ -81,6 +81,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need further assistance, feel free to contact me:
 
 - Email: [Mail me](mailto:iamnoboby40x@gmail.com)
-- LinkedIn: [linkedin-profile]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/karthik-b-475484259/))
+- LinkedIn: [linkedin-profile](https://www.linkedin.com/in/karthik-b-475484259/)
 
 ---
