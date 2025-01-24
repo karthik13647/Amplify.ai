@@ -12,16 +12,17 @@ app = Flask(__name__)
 
 
 #Configure Gemini API
-# my_api_key_gemini = os.getenv('gemini_api_abhi') 
+api_key = os.getenv('gemini_api_abhi')
+if api_key:
+    genai.configure(api_key=api_key)
 # print(my_api_key_gemini)
-#  # Ensure this is set in your environment
-# if not my_api_key_gemini:
-#     raise ValueError("API Key for Gemini is not set.")
+ # Ensure this is set in your environment
+if not api_key:
+    raise ValueError("API Key for Gemini is not set.")
 app.secret_key = os.getenv('gemini_api_abhi')
 # print(app.secret_key)
 if not app.secret_key:
     raise ValueError("No secret key set. Make sure FLASK_SECRET_KEY is set in the environment.")
-genai.configure(api_key="AIzaSyCMRYuGVVM8c89trycJhbQ879ghQY4C9fM")
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///Users.db';
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)  # Session expires after 30 minutes
 db=SQLAlchemy(app)
