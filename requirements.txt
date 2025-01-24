@@ -18,3 +18,4 @@ SQLAlchemy==2.0.9
 typing_extensions==4.5.0
 Werkzeug==2.2.3
 WTForms==3.0.1
+google-generativeai==0.8.3
