@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="icon" type="image/x-icon" href="static/img/favicon_web.png" />
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  <style>
+    /* Include your existing styles here */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(110deg, #030b14, #da7613);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      max-width: 900px;
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-section {
+      flex: 1;
+      padding: 40px;
+      color: #0f3007;
+      background-image: url("https://images.unsplash.com/reserve/9nfsYstTyWEJKScHr3MV_IMG_6450.jpg?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFuaW1tYXRpb24lMjBwZXJzb24lMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D"); /* Replace with actual image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .left-section h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .left-section p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .right-section {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .right-section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group.terms {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group.terms label {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .primary-btn:hover {
+      background-color: #333;
+    }
+
+    .secondary-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      color: #000;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .secondary-btn:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-section, .right-section {
+        flex: unset;
+        width: 100%;
+      }
+
+      .left-section {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .right-section {
+        padding: 20px;
+      }
+    }
+
+    .alert {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h1>Create your Account</h1>
+      <p>Share your artwork and Get projects!</p>
+    </div>
+    <div class="right-section">
+      <h2>Sign Up</h2>
+      
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <input type="text" placeholder="First name" name="first_name" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Last name" name="last_name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email address" name="email" required>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" name="password" required>
+        </div>
+        <div class="form-group terms">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">Accept Terms & Conditions</label>
+        </div>
+        <button class="primary-btn" type="submit">Join us →</button>
+      </form>
+      <p class="already-account">
+        Already have an account? 
+        <a href="/login">Login here</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

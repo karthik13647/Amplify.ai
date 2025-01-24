@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplify</title>
+    <link rel="icon" type="image/x-icon" href="static/img/favicon_web.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1628671716126-a63ccc66671f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-container {
+            flex: 1;
+        }
+
+        .section-card {
+            background-color: rgba(17, 138, 231, 0.4);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-card a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .footer-section {
+            background-color: rgba(21, 23, 24, 0.8);
+            color: #ddd;
+            padding: 20px 0;
+        }
+
+        .footer-section a {
+            color: #df6951;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .footer-section p {
+            margin: 0;
+        }
+        .logout-container {
+    text-align: center; /* Center the button horizontally */
+    margin-top: 10px; /* Add space above the button */
+    margin-bottom: 30px; /* Add space below the button to prevent it from sticking to the footer */
+    position: relative; /* Ensure the button is positioned relative to its container */
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 12px 24px; /* Adjust padding for a balanced look */
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #dc3545; /* Bootstrap's danger color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #a71d2a; /* Darker shade of danger color */
+    transform: translateY(-5px); /* Slight floating effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Main Content Section -->
+     
+    <div class="main-container container my-5">
+        
+        <div class="row text-center justify-content-center">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>HEY ! </strong>Login Successful
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="section-card">
+                    <a href="{{ url_for('professional_summary') }}">Professional Summary Generator</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="section-card">
+                    <a href="{{ url_for('cover_letter') }}">Cover Letter Generator</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="section-card">
+                    <a href="{{ url_for('referral_message') }}">Referral Message Generator</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="section-card">
+                    <a href="{{ url_for('cold_mail') }}">Cold Mail Generator</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="section-card">
+                    <a href="{{ url_for('keywords') }}">Job Description Keyword Generator</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logout-container">
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo and Social Icons -->
+                <div class="col-lg-3 col-md-6 text-center mb-3">
+                    <img src="static/img/logo.png" alt="Logo" height="60">
+                    <div class="mt-3">
+                        <a href="https://github.com/karthik13647" target="_blank" class="me-3"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/karthik_b47" target="_blank" class="me-3"><i class="fab fa-x"></i></a>
+                        <a href="https://www.linkedin.com/in/karthik-b-475484259/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Info -->
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <h5>Legal Stuff</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Financing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:info@amplify.com">info@amplify.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Amplify. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart text-danger"></i> by <a href="https://github.com/karthik13647">Karthik</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

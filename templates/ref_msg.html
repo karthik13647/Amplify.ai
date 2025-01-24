@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/img/favicon_web.png">
+    <title>Amplify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-image: url('https://images.unsplash.com/photo-1479920252409-6e3d8e8d4866?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+            height: 200px;
+            width: 100%;
+            background-size:cover;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            border-radius: 8px; /* Rounded corners */
+            background-color: rgba(255, 255, 255, 0.7); 
+        }
+
+        h1 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center; /* Centered title */
+            font-size: 2.5rem; /* Increased font size */
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 1.1rem; /* Increased font size */
+        }
+
+        input{
+            width: 100%; 
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; 
+            resize: vertical; 
+            transition: border-color 0.3s;
+        }
+
+        textarea {
+            width: 100%; 
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; 
+            resize: vertical; 
+            transition: border-color 0.3s; /* Transition for border color */
+        }
+
+        textarea:focus {
+            border-color: #ff6f61; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #ff6f61, #de5d8d); /* Gradient background */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 20px; /* Increased padding */
+            font-weight: 600;
+            font-size: 1.1rem; /* Increased font size */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #de5d8d, #ff6f61); /* Reverse gradient on hover */
+            transform: translateY(-2px); /* Button lift effect */
+        }
+
+        .btn-primary:active {
+            transform: translateY(0); /* Reset lift on click */
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #333; /* Icon color */
+            transition: color 0.3s; /* Transition for icon color */
+        }
+
+        .social-icons a:hover {
+            color: #ff6f61; /* Change icon color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Referral Message Generator</h1>
+        <form action="{{ url_for('referral_message') }}" method="post">
+            <div class="form-group">
+                <label for="job_id">Job ID</label>
+                <input type="text" id="job_id" name="job_id" placeholder="Enter the job ID here">
+            </div>
+            <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea class="form-control" id="job_description" name="job_description" rows="7" placeholder="Enter the job description here..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="resume_text">Resume Text:</label>
+                <textarea class="form-control" id="resume_text" name="resume_text" rows="10" placeholder="Enter your resume text here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Generate Cold Mail</button>
+<!-- 
+        </form> -->
+        
+        <!-- Icons -->
+        <div class="text-center social-icons">
+            <a href="https://github.com/karthik13647" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/karthik-b-475484259/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+    </div>
+    
+
+</body>
+</html>
